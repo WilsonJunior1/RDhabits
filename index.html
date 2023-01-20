@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Um habit tracker baseado nos ensinamentos do Reservatório de Dopamina, para você voar alto de forma leve.">
+  <link rel="shortcut icon" href="./assets/icons/Plus.svg" type="image/x-icon">
   <title>Voe alto, seja leve.</title>
   <link rel="stylesheet" href="./src/css/style.css">
 </head>
@@ -13,30 +14,30 @@
 <body>
   <header id="header" class="header">
 
-    <img src="./assets/icons/Logo.svg" alt="Logo do Aplicativo: Voe alto, seja leve.">
-    <button id="register" class="register"> <img src="./assets/icons/Plus.svg" alt="Icone de 'mais'"> Registrar o meu dia</button>
+    <img src="./assets/icons/Logo.svg" alt="Logo do Aplicativo: Voe alto, seja leve." id="logo">
+    <button id="register" class="register"> <img src="./assets/icons/Plus.svg" alt="Icone de 'mais'"> <div>Registrar o meu dia</div></button>
 
   </header>
 
   <main>
     <form class="form">
       <div class="habits">
-        <div class="habit">
+        <div class="habit" data-name="read" id="read">
           📖
         </div>
-        <div class="habit">
+        <div class="habit" data-name="water" id="water">
           💧
         </div>
-        <div class="habit">
+        <div class="habit" data-name="gym" id="gym">
           💪🏻
         </div>
-        <div class="habit">
+        <div class="habit" data-name="sleep" id="sleep">
           💤
         </div>
-        <div class="habit">
+        <div class="habit" data-name="study" id="study">
           📚
         </div>
-        <div class="habit">
+        <div class="habit" data-name="healthy"id="healthy">
           🥗
         </div>
       </div>
@@ -44,6 +45,8 @@
       <div class="days"></div>
     </form>
   </main>
+
+  <script src="https://cdn.jsdelivr.net/gh/maykbrito/libs/NLWSetup/source/NLWSetup.js"></script>
   <script src="./src/js/script.js"></script>
 </body>
 
