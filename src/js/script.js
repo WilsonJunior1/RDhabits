@@ -1,21 +1,51 @@
-const REGISTER = document.querySelector("#register");
-const DAYS = document.querySelector(".days");
+const form = document.querySelector(".form")
+const lib = new NLWSetup(form)
+const register = document.querySelector("#register")
 
-let addDay = () => {
-  const TODAY = new Date().toLocaleDateString("pt-br").slice(0, -5)
-  DAYS.innerHTML += `
-  <div class="day">
-    <div>${TODAY}</div>
-    <input type="checkbox" name="read" class="check">
-    <input type="checkbox" name="water" class="check">
-    <input type="checkbox" name="gym" class="check">
-    <input type="checkbox" name="sleep" class="check">
-    <input type="checkbox" name="study" class="check">
-    <input type="checkbox" name="healthy" class="check">
-  </div>
-  `
+let save = () => {
+  localStorage.setItem("habits@data", JSON.stringify(lib.data))
 }
 
-REGISTER.addEventListener("click", addDay)
+let style = () => {
+  let day = document.querySelectorAll(".day > input")
+  day.forEach(element => {
+    element.classList.add("check")
+});
+}
+
+let add = () => {
+  const today = new Date().toLocaleDateString("pt-br").slice(0, -5)
+  const dayExists = lib.dayExists(today)
+
+  if(dayExists){
+    alert("🔴 Dia já adicionado.")
+  }
+  else{
+    lib.addDay(today)
+    style()
+  }  
+}
+
+register.addEventListener("click", add)
+form.addEventListener("change", save)
+
+const data = JSON.parse(localStorage.getItem("habits@data")) || {}
+lib.setData(data)
+lib.load()
+style()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
