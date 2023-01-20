@@ -16,22 +16,38 @@
 *{
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body{
   font-family: 'Inter', sans-serif;
   background: var(--black0);
-  color: var(--white0)
+  color: var(--white0);
 }
 
 /* HEADER */
 
 .header{
+  position: fixed;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 48px;
+  background-color: var(--black0);
 } 
+
+@media(max-width: 820px){
+  #logo{
+    width: 340px;
+  }
+}
+
+@media(max-width: 650px){
+  button div{
+    display: none;
+  }
+}
 
 .register{
   border: 1px solid var(--red500);
@@ -54,7 +70,8 @@ body{
 
 .form{
   display: flex;
-  padding: 0 48px;
+  padding: 182px 48px 48px;
+  width: fit-content;
 }
 
 .habits{
